@@ -1,0 +1,29 @@
+{
+  "name": "advanced-express-course",
+  "version": "1.0.0",
+  "description": "Course about Advanced Web Application",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kharmaodo/advanced-express-course.git"
+  },
+  "keywords": [
+    "express",
+    "dotenv",
+    "nodejs",
+    "postgresql",
+    "docker",
+    "docker-compose",
+    "ci",
+    "cd"
+  ],
+  "author": "Maodo DIOP & Master 2 of UADB (year 2023-2024)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kharmaodo/advanced-express-course/issues"
+  },
+  "homepage": "https://github.com/kharmaodo/advanced-express-course#readme"
+}
