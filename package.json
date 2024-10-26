@@ -2,8 +2,10 @@
   "name": "advanced-express-course",
   "version": "1.0.0",
   "description": "Course about Advanced Web Application",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
+    "start": "node src/app.js",
+    "hotdeploy": "nodemon src/app.js",
     "test": "jest"
   },
   "repository": {
@@ -25,5 +27,12 @@
   "bugs": {
     "url": "https://github.com/kharmaodo/advanced-express-course/issues"
   },
-  "homepage": "https://github.com/kharmaodo/advanced-express-course#readme"
+  "homepage": "https://github.com/kharmaodo/advanced-express-course#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
 }
