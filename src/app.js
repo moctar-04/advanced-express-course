@@ -1,37 +1,19 @@
-//Appeller express
 const express = require('express');
-//Instancier l'application avec
-const app = express() ; 
+const https = require('https');
+const fs = require('fs');
+const app = express();
 
+app.get('/', (req, res) => {
+  res.send('En visitant https://localhost:3000. Le navigateur affiche un avertissement de sécurité, car le certificat n’est pas signé par une autorité de confiance CA, mais on peut ignorer cet avertissement pour tester localement.');
+});
 
-// API Restful à mettre en oeuvre CRUD ==> GET/POST/DELETE/PUT/PATCH
+const options = {
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem')
+};
 
+const port = 3000;
+https.createServer(options, app).listen(port, () => {
+  console.log(`Server running securely at https://localhost:${port}`);
+});
 
-//GET
-app.get('/', async (req,res) =>{
-    res.json("Welcome to the AWC : Master 2 ");
-    //console.log("GETting is OK") ;
-}
-);
-
-//GET
-app.get('/users', async (req,res) =>{
-    res.json("GETting is OK");
-    //console.log("GETting is OK") ;
-}
-);
-
-
-
-
-//Demarrge de l'appli sur un port defini par défaut ou à travers
-// la valeur dans .env
-
-module.exports = app ;
-if(require.main === module){
-    const PORT = process.env.PORT || 3000 ;
-
-    app.listen(PORT, () =>{
-    console.log(`Serveur démarré sur le port ${PORT}`);
-    });
-}
